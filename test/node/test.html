@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WSS Test</title>
+</head>
+
+<body>
+
+<h3>WebSocket Test</h3>
+
+<button onclick="sendMsg()">发送消息</button>
+
+<div id="log"></div>
+
+
+<script>
+
+let ws;
+
+
+function log(msg){
+
+    document.getElementById("log").innerHTML +=
+        "<p>"+msg+"</p>";
+
+}
+
+
+// 建立 WSS 连接
+
+ws = new WebSocket(
+    "wss://localhost:8443"
+);
+
+
+
+ws.onopen = function(){
+
+    log("连接成功");
+
+};
+
+
+
+ws.onmessage = function(event){
+
+    log(
+        "收到服务器消息: "
+        + event.data
+    );
+
+};
+
+
+
+ws.onerror=function(error){
+
+    log(
+        "错误:"+error
+    );
+
+};
+
+
+
+ws.onclose=function(){
+
+    log(
+        "连接关闭"
+    );
+
+};
+
+
+
+
+function sendMsg(){
+
+    ws.send(
+        JSON.stringify({
+
+            type:"test",
+
+            msg:"hello server"
+
+        })
+    );
+
+}
+
+
+</script>
+
+</body>
+</html>

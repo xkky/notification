@@ -29,6 +29,14 @@
                 "JAVA_HOME": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu",
                 "PATH": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu/bin:${env:PATH}"
             }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Start WSS Service",
+            "program": "${workspaceFolder}/test/node/test_service.js",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/test/node"
         }
     ]
 }

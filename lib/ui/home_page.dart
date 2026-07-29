@@ -38,6 +38,11 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           _status = '收到消息: $message';
         });
+        _showNotification(
+          title: '收到 WebSocket 消息',
+          body: message.toString(),
+          sound: AppConfig.production.soundAsset,
+        );
       },
       onError: (error) {
         setState(() {
@@ -56,11 +61,14 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  Future<void> _showNotification() async {
+  Future<void> _showNotification(
+      {required String title,
+      required String body,
+      required String sound}) async {
     await NotificationService.show(
-      title: '通知示例',
-      body: '当前平台: ${AppPlatformInfo.detect().platform.name}',
-      sound: AppConfig.production.soundAsset,
+      title: title,
+      body: body,
+      sound: sound,
     );
   }
 
@@ -86,7 +94,13 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 12),
             FilledButton.icon(
-              onPressed: _showNotification,
+              onPressed: () async {
+                await _showNotification(
+                  title: '通知示例',
+                  body: '当前平台: ${AppPlatformInfo.detect().platform.name}',
+                  sound: AppConfig.production.soundAsset,
+                );
+              },
               icon: const Icon(Icons.notifications_active),
               label: const Text('发送通知'),
             ),

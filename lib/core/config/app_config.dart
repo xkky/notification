@@ -10,7 +10,8 @@ class AppConfig {
   final String soundAsset;
 
   static const AppConfig production = AppConfig(
-    websocketUrl: 'wss://example.com/ws',
+    // websocketUrl: 'wss://example.com/ws',
+    websocketUrl: 'wss://localhost:8443',
     defaultTopic: 'notification_project',
     soundAsset: 'assets/sounds/ai_done.wav',
   );
