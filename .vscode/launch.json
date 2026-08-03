@@ -6,8 +6,8 @@
             "request": "launch",
             "type": "dart",
             "env": {
-                "JAVA_HOME": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu",
-                "PATH": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu/bin:${env:PATH}"
+                "JAVA_HOME": "/Users/xkky/program/env/.sdkman/candidates/java/17.0.13.fx-zulu",
+                "PATH": "${JAVA_HOME}/bin:${env:PATH}"
             }
         },
         {
@@ -17,7 +17,7 @@
             "flutterMode": "profile",
             "env": {
                 "JAVA_HOME": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu",
-                "PATH": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu/bin:${env:PATH}"
+               "PATH": "${JAVA_HOME}/bin:${env:PATH}"
             }
         },
         {
@@ -26,8 +26,8 @@
             "type": "dart",
             "flutterMode": "release",
             "env": {
-                "JAVA_HOME": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu",
-                "PATH": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu/bin:${env:PATH}"
+                "JAVA_HOME": "/Users/xkky/program/env/.sdkman/candidates/java/17.0.13.fx-zulu",
+                "PATH": "${JAVA_HOME}/bin:${env:PATH}"
             }
         },
         {

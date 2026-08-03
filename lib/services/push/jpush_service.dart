@@ -44,7 +44,8 @@ class JPushService implements PushService {
       onReceiveMessage: (Map<String, dynamic> message) async {
         _handleMessage(message, isNotification: false);
       },
-      onReceiveNotificationAuthorization: (Map<String, dynamic> message) async {
+      onReceiveNotificationAuthorization:
+          (Map<String, dynamic> message) async {
         // 通知授权状态变化
       },
     );

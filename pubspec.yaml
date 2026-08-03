@@ -56,7 +56,7 @@ dependencies:
 # 极光推送 Android 厂商通道配置
 # 文档: https://docs.jiguang.cn/jpush/client/Android/android_3rd_param
 jpush_android:
-  app_key: YOUR_JPUSH_APPKEY       # 极光后台 AppKey
+  app_key: 981da4b7b85d8189fa01a9ad       # 极光后台 AppKey
   channel: developer-default         # 渠道名
   huawei:
     enable: false                    # 启用华为推送需放 agconnect-services.json 到 android/app/
@@ -80,6 +80,15 @@ jpush_android:
   honor:
     enable: false
     app_id: YOUR_HONOR_APPID
+  # FCM 通道 - 海外设备(有 Google Play 服务)自动走 FCM
+  # 注意:jpush_flutter_android 1.0.2 的 build.gradle 未自动注入 FCM 配置,
+  # 需在 android/app/build.gradle.kts 手动添加:
+  #   1. plugins 块应用 id("com.google.gms.google-services")
+  #   2. dependencies 添加 implementation("com.google.firebase:firebase-messaging:23.4.1")
+  #   3. android/app/ 下放置 google-services.json(从 Firebase 控制台下载)
+  # 极光 SDK 在海外网络环境会自动切换到 FCM 通道,无需额外代码
+  fcm:
+    enable: false
 
 dev_dependencies:
   flutter_test:

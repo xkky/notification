@@ -23,7 +23,7 @@ class AppConfig {
     defaultTopic: 'notification_project',
     soundAsset: 'assets/sounds/ai_done.wav',
     // 替换为你在极光后台申请的 AppKey
-    jpushAppKey: 'YOUR_JPUSH_APPKEY',
-    jpushChannel: 'developer-default',
+    jpushAppKey: '981da4b7b85d8189fa01a9ad',
+    jpushChannel: 'd90c91542563776b316a12d2',
   );
 }

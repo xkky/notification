@@ -2,12 +2,15 @@ plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    // Google Services 插件 - 解析 google-services.json,为极光 FCM 通道提供配置
+    // 暂时禁用: 需放置 google-services.json 到 android/app/ 后方可启用
+    // id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.notification_project"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "29.0.13113456"
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -49,6 +52,11 @@ kotlin {
 }
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+
+    // Firebase Messaging - 极光 FCM 通道依赖
+    // 海外设备(有 Google Play 服务)会自动走 FCM,国内走厂商通道
+    // 版本需与 jpush_flutter_android 内部 FCM 插件兼容
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
 }
 
 flutter {
