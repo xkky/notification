@@ -45,9 +45,41 @@ dependencies:
   # UUID
   uuid: ^4.5.0
 
-  # 移动推送
-  firebase_core: ^3.15.2
-  firebase_messaging: ^15.2.10
+  # 移动推送 - 极光推送(国内主推 + 厂商通道)
+  jpush_flutter: ^3.4.9
+  jpush_flutter_android: ^1.0.2
+
+  # 海外移动推送(可选,如需 FCM 时启用)
+  # firebase_core: ^3.15.2
+  # firebase_messaging: ^15.2.10
+
+# 极光推送 Android 厂商通道配置
+# 文档: https://docs.jiguang.cn/jpush/client/Android/android_3rd_param
+jpush_android:
+  app_key: YOUR_JPUSH_APPKEY       # 极光后台 AppKey
+  channel: developer-default         # 渠道名
+  huawei:
+    enable: false                    # 启用华为推送需放 agconnect-services.json 到 android/app/
+  xiaomi:
+    enable: false
+    app_key: YOUR_XIAOMI_APPKEY
+    app_id: YOUR_XIAOMI_APPID
+  meizu:
+    enable: false
+    app_key: YOUR_MEIZU_APPKEY       # 形如 MZ-xxx
+    app_id: YOUR_MEIZU_APPID         # 形如 MZ-xxx
+  vivo:
+    enable: false
+    app_key: YOUR_VIVO_APPKEY
+    app_id: YOUR_VIVO_APPID
+  oppo:
+    enable: false
+    app_key: YOUR_OPPO_APPKEY        # 形如 OP-xxx
+    app_id: YOUR_OPPO_APPID          # 形如 OP-xxx
+    app_secret: YOUR_OPPO_APPSECRET   # 形如 OP-xxx
+  honor:
+    enable: false
+    app_id: YOUR_HONOR_APPID
 
 dev_dependencies:
   flutter_test:

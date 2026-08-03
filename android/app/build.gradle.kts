@@ -28,6 +28,9 @@ android {
         // flag during build.
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // 极光推送 manifestPlaceholders 由 jpush_flutter_android 插件根据
+        // pubspec.yaml 中的 jpush_android.* 节点自动注入,无需在此手动配置。
     }
 
     buildTypes {
