@@ -6,7 +6,7 @@
             "request": "launch",
             "type": "dart",
             "env": {
-                "JAVA_HOME": "/Users/xkky/program/env/.sdkman/candidates/java/17.0.13.fx-zulu",
+                "JAVA_HOME": "/Users/xkky/program/env/java/sdkman/candidates/java/17.0.13.fx-zulu",
                 "PATH": "${JAVA_HOME}/bin:${env:PATH}"
             }
         },

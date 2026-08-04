@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.notification_project"
+    namespace = "com.xkky.obsidian.plan.notification"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "29.0.13113456"
 

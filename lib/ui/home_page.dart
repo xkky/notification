@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
@@ -124,11 +125,17 @@ class _HomePageState extends State<HomePage> {
         _status = '收到推送: ${message.title}';
         _messages.insert(0, '${message.title}: ${message.body}');
       });
-      _showNotification(
-        title: message.title,
-        body: message.body,
-        sound: AppConfig.production.soundAsset,
-      );
+      if (defaultTargetPlatform == TargetPlatform.android) {
+        // Android: JPush SDK 已自动显示通知,仅播放闹钟流声音(绕过静音)
+        NotificationService.playAlarmSound();
+      } else {
+        // iOS: 前台时需主动显示通知
+        _showNotification(
+          title: message.title,
+          body: message.body,
+          sound: AppConfig.production.soundAsset,
+        );
+      }
     });
     try {
       await _pushService!.initialize();
