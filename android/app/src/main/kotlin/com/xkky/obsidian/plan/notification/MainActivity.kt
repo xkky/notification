@@ -1,4 +1,4 @@
-package com.example.notification_project
+package com.xkky.obsidian.plan.notification
 
 import io.flutter.embedding.android.FlutterActivity
 

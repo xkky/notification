@@ -88,7 +88,7 @@ jpush_android:
   #   3. android/app/ 下放置 google-services.json(从 Firebase 控制台下载)
   # 极光 SDK 在海外网络环境会自动切换到 FCM 通道,无需额外代码
   fcm:
-    enable: false
+    enable: true
 
 dev_dependencies:
   flutter_test:

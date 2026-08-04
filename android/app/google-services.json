@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290410880338",
+    "project_id": "notification-55e60",
+    "storage_bucket": "notification-55e60.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290410880338:android:308207ea1aed5c8517ae8b",
+        "android_client_info": {
+          "package_name": "com.xkky.obsidian.plan.notification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk4zKrDlhXMUCmsvPFcobuVA_2h-uV8AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
